@@ -1,8 +1,8 @@
-# EthMove Project
+# EthMov Project
 
 ## Description
 
-The ethMove platform decentralizes transport services. 
+The ethMov platform decentralizes transport services. 
 
 On this platform anyone is able to post a packet transportation demand including destination (eth) address, packet size category, packet weight category, destination coordinates, delivery time range category, estimated packet value (for insurance purposes) and price. As well anyone is able to supply the transport service demanded. 
 
