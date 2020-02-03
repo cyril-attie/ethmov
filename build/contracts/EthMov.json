@@ -17695,9 +17695,202 @@
     "name": "solc",
     "version": "0.5.12+commit.7709ece9.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "4": {
+      "events": {
+        "0x81f6c8fdf5c0794749166b428249c02a7962d248f18cfa88e70a564b282b79a5": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "transportID",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "transporter",
+              "type": "address"
+            }
+          ],
+          "name": "AllocatedTransportSupplyCancelled",
+          "type": "event",
+          "signature": "0x81f6c8fdf5c0794749166b428249c02a7962d248f18cfa88e70a564b282b79a5"
+        },
+        "0x87d76474b59c8a84b66fbd93991a1e3760b806cc4761ad4a08e39d96d4398f6a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "transportID",
+              "type": "uint256"
+            }
+          ],
+          "name": "Delivery",
+          "type": "event",
+          "signature": "0x87d76474b59c8a84b66fbd93991a1e3760b806cc4761ad4a08e39d96d4398f6a"
+        },
+        "0x8a4079a255b0a408852bc51ce05272a95de426e66bfc5d204314b5e67dec0975": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "transportID",
+              "type": "uint256"
+            }
+          ],
+          "name": "PickUp",
+          "type": "event",
+          "signature": "0x8a4079a255b0a408852bc51ce05272a95de426e66bfc5d204314b5e67dec0975"
+        },
+        "0x12e241377aec2306fac6f96b307f1204aab3113b8a8c7dfaee5e142d8623f0a7": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "transportID",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint8[4]",
+              "name": "itinerary",
+              "type": "uint8[4]"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint8",
+              "name": "sizeCategory",
+              "type": "uint8"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint8",
+              "name": "weightCategory",
+              "type": "uint8"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "maxDeliveryTimestamp",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "bidPrice",
+              "type": "uint256"
+            }
+          ],
+          "name": "TransportDemanded",
+          "type": "event",
+          "signature": "0x12e241377aec2306fac6f96b307f1204aab3113b8a8c7dfaee5e142d8623f0a7"
+        },
+        "0x98cd5064478fd90f2f72549bedecba7f2caba213ee3d5b8b5a920d87ecc569af": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_transportID",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "transportSupplier",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "askPrice",
+              "type": "uint256"
+            }
+          ],
+          "name": "TransportSupplied",
+          "type": "event",
+          "signature": "0x98cd5064478fd90f2f72549bedecba7f2caba213ee3d5b8b5a920d87ecc569af"
+        },
+        "0xe3a148342f5c53baf761eed5da75635df54911c460d599b0fd3a643ab3b29af3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "transportID",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "selectedTransporter",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "atPrice",
+              "type": "uint256"
+            }
+          ],
+          "name": "TransportationAllocated",
+          "type": "event",
+          "signature": "0xe3a148342f5c53baf761eed5da75635df54911c460d599b0fd3a643ab3b29af3"
+        },
+        "0xea891f22d24a1a6517e1cfc86903a164db8e2fa2619a5329148237960077ecd1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "transportID",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "transporter",
+              "type": "address"
+            }
+          ],
+          "name": "UnallocatedTransportSupplyCancelled",
+          "type": "event",
+          "signature": "0xea891f22d24a1a6517e1cfc86903a164db8e2fa2619a5329148237960077ecd1"
+        },
+        "0xbd459426b66011640c7794c72511ba4e28e7424b9ebac95831b2001d310282f2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "transportID",
+              "type": "uint256"
+            }
+          ],
+          "name": "transportDemandCancellation",
+          "type": "event",
+          "signature": "0xbd459426b66011640c7794c72511ba4e28e7424b9ebac95831b2001d310282f2"
+        }
+      },
+      "links": {},
+      "address": "0x33bfD8f92dC326E5b04A21Bc48f85892d6B68d9a",
+      "transactionHash": "0x5bba3538d37518b9c3f491585f2351f3f061f3263f9195c03eb6a18bd4b94218"
+    }
+  },
   "schemaVersion": "3.0.20",
-  "updatedAt": "2020-02-02T20:47:23.895Z",
+  "updatedAt": "2020-02-02T22:55:32.789Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {},
     "title": "EthMov"

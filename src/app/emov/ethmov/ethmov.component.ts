@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Web3Service} from '../../util/web3.service';
 import { MatSnackBar } from '@angular/material';
+import Web3Utils from 'web3-utils';
 
 declare let require: any;
 const ethmov_artifacts = require('../../../../build/contracts/EthMov.json');
@@ -22,15 +23,15 @@ export class EthmovComponent implements OnInit {
     transportCount : 0,
     account:'',
     pendingWithdrawal:0,
-    newTransport:{
-      _to:'',
-      _sizeCategory:0,
-      _weightCategory:0,
-      _itinerary:[0,0,0,0,],
-      _maxDeliveryTimestamp:0,
-      _weiPacketValue:0,
-      _bidPrice:0
-    }
+    newTransport:[
+      '',//_to
+      0,//_sizeCategory
+      0,//_weightCategory
+      [0,0,0,0,],//_itinerary
+      0,//_maxDeliveryTimestamp
+      1,//_weiPacketValue
+      0//_bidPrice
+    ]
   };
 
   status = '';
@@ -148,35 +149,35 @@ export class EthmovComponent implements OnInit {
         
         
   setToAddress(e) {
-    this.model.newTransport._to = e.target.value;
+    this.model.newTransport[0] = e.target.value;
   }
   setSize(e) {
-    this.model.newTransport._sizeCategory = e.target.value;
+    this.model.newTransport[1] = e.target.value;
   }
   setWeight(e) {
-    this.model.newTransport._weightCategory = e.target.value;
+    this.model.newTransport[2] = e.target.value;
   }
   setItinerary1(e) {
-    this.model.newTransport._itinerary[0] = e.target.value;
+    this.model.newTransport[3][0] = e.target.value;
   }
   setItinerary2(e) {
-    this.model.newTransport._itinerary[1] = e.target.value;
+    this.model.newTransport[3][1] = e.target.value;
   }
   setItinerary3(e) {
-    this.model.newTransport._itinerary[2] = e.target.value;
+    this.model.newTransport[3][2] = e.target.value;
   }
   setItinerary4(e) {
-    this.model.newTransport._itinerary[3] = e.target.value;
+    this.model.newTransport[3][3] = e.target.value;
   }
   setDelivery(e) {
-    this.model.newTransport._sizeCategory = e.target.value;
+    this.model.newTransport[4] = e.target.value;
   }
   setPrice(e) {
-    this.model.newTransport._bidPrice = e.target.value;
+    this.model.newTransport[6] = Web3Utils.toWei(e.target.value,'ether'); 
   }
   async postTransportDemand(){
     const deployedEthMov = await this.EthMov.deployed();
-    await deployedEthMov.demandTransport.send(this.model.newTransport);
+    await deployedEthMov.demandTransport.sendTransaction(...this.model.newTransport, {from:this.model.account});
   }
 }
 

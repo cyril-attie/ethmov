@@ -11,12 +11,13 @@ export class Web3Service {
   private web3: any;
   private accounts: string[];
   public ready = false;
-
+  public utils :any;
   public accountsObservable = new Subject<string[]>();
 
   constructor() {
     window.addEventListener('load', (event) => {
       this.bootstrapWeb3();
+      this.utils= this.web3.utils;
     });
   }
 
@@ -27,6 +28,7 @@ export class Web3Service {
       window.ethereum.enable().then(() => {
         this.web3 = new Web3(window.ethereum);
       });
+      
     } else {
       console.log('No web3? You should consider trying MetaMask!');
 
@@ -35,7 +37,7 @@ export class Web3Service {
       // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
       this.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
     }
-
+  
     setInterval(() => this.refreshAccounts(), 100);
   }
 

@@ -804,9 +804,17 @@
     "name": "solc",
     "version": "0.5.12+commit.7709ece9.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0xDE48687C25e250377Cf7D29De938Dd93E803D7Aa",
+      "transactionHash": "0x5f83b9911806a5eaddcc30f64f5264de291792ccd84887fa5d2516639f7fd9a8"
+    }
+  },
   "schemaVersion": "3.0.20",
-  "updatedAt": "2020-02-02T20:47:23.954Z",
+  "updatedAt": "2020-02-02T22:55:32.772Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {},
     "title": "Withdrawal Pattern"

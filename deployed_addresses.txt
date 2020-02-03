@@ -1,0 +1,6 @@
+#Deployed addresses
+
+On rinkeby testnet (id:4)
+
+EthMov contract : 0x33bfD8f92dC326E5b04A21Bc48f85892d6B68d9a
+Withdrawal Contract : 0xDE48687C25e250377Cf7D29De938Dd93E803D7Aa

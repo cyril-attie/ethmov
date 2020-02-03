@@ -1,48 +1,46 @@
 <mat-card>
-    <mat-card-header>New Transport</mat-card-header>
+    
+    <mat-card>
+        <mat-card-header>New Transport</mat-card-header>
+        <mat-card-content>
+            <mat-form-field>
+        <input type="text" matInput id="toAddress" placeholder="Destination" (change)="setToAddress($event)" required>
+    </mat-form-field><br>
+    <mat-form-field>
+        <input type="text" matInput id="sizeCategory" placeholder="Size" (change)="setSize($event)" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" matInput id="weightCategory" placeholder="Weight" (change)="setWeight($event)" required>
+    </mat-form-field><br>
+      <mat-form-field>
+          <input type="number" matInput id="itinerary1" placeholder="Origin Latitude" (change)="setItinerary1($event)" required>
+        </mat-form-field>
+        <mat-form-field>
+        <input type="number" matInput id="itinerary2" placeholder="Origin Longitude" (change)="setItinerary2($event)" required>
+    </mat-form-field>
+      <mat-form-field>
+          <input type="number" matInput id="itinerary3" placeholder="Destination Latitude" (change)="setItinerary3($event)" required>
+        </mat-form-field>
+      <mat-form-field>
+          <input type="number" matInput id="itinerary4" placeholder="Origin Latitude" (change)="setItinerary4($event)" required>
+      </mat-form-field><br>
+      <mat-form-field>
+          <input type="datetime-local" matInput id="maxDeliveryTimestamp" placeholder="Delivery Deadline" (change)="setDelivery($event)" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="number" matInput id="price" placeholder="Bid Price" (change)="setPrice($event)" required>
+        </mat-form-field>
+        <button mat-button id="post" (click)="postTransportDemand()">Post Transport Demand</button>
+    </mat-card-content>
+
+    <mat-card-header>Profile</mat-card-header>
     <mat-card-content>
-      <mat-form-field id="toAddress" class="address-field">
-        <mat-select name="account" (selectionChange)="refreshBalance()" [(value)]="model.account" placeholder="Address">
+      <mat-form-field id="address" class="address-field">
+        <mat-select name="From address" (selectionChange)="refreshPendingWithdrawal()" [(value)]="model.account" placeholder="Address">
           <mat-option *ngFor="let account of accounts" [value]="account">{{account}}</mat-option>
         </mat-select>
-      </mat-form-field>
-  
-      <p>You have <span id="balance">{{model.balance}}</span> META</p>
+      </mat-form-field>  
+      <p>You have <span id="balance">{{model.pendingWithdrawal}}</span> Pending Withdrawals</p>
     </mat-card-content>
-  </mat-card>
-  
-  <mat-card>
-    <mat-card-header>Send MetaCoin</mat-card-header>
-    <mat-card-content>
-      <mat-form-field>
-        <input type="text" matInput id="toAddress" placeholder="Destination" (change)="setToAddress($event)" required>
-      </mat-form-field><br>
-      <mat-form-field>
-        <input type="text" matInput id="sizeCategory" placeholder="Size" (change)="setSize($event)" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" matInput id="weightCategory" placeholder="Weight" (change)="setWeight($event)" required>
-      </mat-form-field><br>
-      <mat-form-field>
-        <input type="number" matInput id="itinerary1" placeholder="Origin Latitude" (change)="setItinerary1($event)" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput id="itinerary2" placeholder="Origin Longitude" (change)="setItinerary2($event)" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput id="itinerary3" placeholder="Destination Latitude" (change)="setItinerary3($event)" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput id="itinerary4" placeholder="Origin Latitude" (change)="setItinerary4($event)" required>
-      </mat-form-field><br>
-      <mat-form-field>
-        <input type="datetime-local" matInput id="maxDeliveryTimestamp" placeholder="Delivery Deadline" (change)="setDelivery($event)" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input type="number" matInput id="price" placeholder="Bid Price" (change)="setPrice($event)" required>
-      </mat-form-field>
-
-      <button mat-button mat-raised-button id="post" (click)="postTransportDemand()">Post Transport Demand</button>
-    </mat-card-content>
-  </mat-card>
-  
+    </mat-card>
+</mat-card>

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import {MetaModule} from './meta/meta.module';
+
 import {EmovModule} from './emov/emov.module';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,7 +32,7 @@ import { EthmovComponent } from './emov/ethmov/ethmov.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    MetaModule,
+
     EmovModule
   ],
   providers: [],
