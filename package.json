@@ -27,7 +27,7 @@
     "@truffle/contract": "^4.1.7",
     "core-js": "2.5.7",
     "ethers": "^4.0.44",
-    "node-sass": "4.12.0",
+    "node-sass": "4.13.1",
     "rxjs": "^6.5.4",
     "truffle-hdwallet-provider": "^1.0.17",
     "tslib": "^1.10.0",
